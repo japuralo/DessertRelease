@@ -13,7 +13,8 @@ import java.io.IOException
 
 class UserPreferencesRepository(
     private val dataStore: DataStore<Preferences>
-){
+)
+{
     val isLinearLayout: Flow<Boolean> = dataStore.data
         .catch {
             if(it is IOException)
